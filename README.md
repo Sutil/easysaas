@@ -1,27 +1,46 @@
 # Easysaas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+Angular 16
+Firebase
+Bootstrap
+
+## Ferramentas necessários
+- Node
+- Angular CLI
+- Firebase Tools - `npm install -g firebase-tools`
+
+## Configure o Firebase
+
+- Crie um projeto no [Firebase](https://console.firebase.google.com).
+   - Crie um instância do Firestore.
+- Altere o arquivo `.firebaserc` para usar o id do seu projeto do firebase
+```
+{
+  "projects": {
+    "default": "id-do-seu-projeto"
+  }
+}
+
+```
+
+- Faça login no terminal para usar o CLI - `firebase login`.
+- Configure o deploy com Github Actions:
+Usando o CLI digite
+```sh
+firebase init hosting:github
+```
+Siga os passos do CLI.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng serve` para servidor de desenvolvimento. Navegue para `http://localhost:4200/`. A aplicação irá atualizar automaricamente a cada vez que salvar o código.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`ng build` para build de deseonvolvimento.
+`ng build -c production` para build de produção.
+Os artefatos serão armazenados em `/dist`
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`ng test` para executar testes unitários via [Karma](https://karma-runner.github.io).
