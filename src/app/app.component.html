@@ -1,2 +1,18 @@
-<h1>Projeto EasySaaS</h1>
-<router-outlet></router-outlet>
+<div>
+
+  <h1>Projeto EasySaaS</h1>
+  <p>This is a paragraph example</p>
+  <router-outlet></router-outlet>
+  
+  <button type="button" class="btn btn-primary" (click)="toggleTheme('light')"
+    tooltip="Tooltip example">
+    Light theme
+  </button>
+
+  <button type="button" class="btn btn-primary" (click)="toggleTheme('dark')"
+    tooltip="Tooltip example">
+    Dark theme
+  </button>
+
+  <button type="button" class="btn btn-secondary">Secondary color example</button>
+</div>
