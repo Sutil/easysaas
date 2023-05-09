@@ -5,8 +5,8 @@ Firebase
 Bootstrap
 
 ## Ferramentas necessários
-- Node
-- Angular CLI
+- [Node](https://nodejs.org/en)
+- [Angular CLI](https://angular.io/cli)
 - Firebase Tools - `npm install -g firebase-tools`
 
 ## Configure o Firebase
@@ -30,6 +30,11 @@ Usando o CLI digite
 firebase init hosting:github
 ```
 Siga os passos do CLI.
+
+## Estilos - altere seu tema se desejar
+
+Altere os arquivos `src/theme-dark.scss` e `src/theme-light.scss` com as variáveis que deseja.
+Veja [Bootstrap Theming](https://getbootstrap.com/docs/4.0/getting-started/theming/) para mais informações.
 
 ## Development server
 
