@@ -1,0 +1,23 @@
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Nova versão disponível</h4>
+    <button type="button" class="close btn-close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Há uma nova versão disponível. Deseja instalar agora?
+  </div>
+  <div class="modal-footer">
+    <div class="d-flex justify-content-between w-100">
+      <button type="button" class="btn" (click)="closeModal()" >Não mostrar mais</button>
+      <div class="d-flex justify-content-end gap-3">
+        <button type="button" class="btn btn-default" (click)="closeModal()" >Agora não</button>
+        <button type="button" class="btn btn-primary">Instalar</button>
+      </div>
+    </div>
+    
+  </div>
+
+
+</ng-template>

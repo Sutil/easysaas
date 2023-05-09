@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { PwaUpdateComponent } from './pwa-update/pwa-update.component';
+import { BsModalService } from 'ngx-bootstrap/modal';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PwaUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     }),
     TooltipModule.forRoot(),
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

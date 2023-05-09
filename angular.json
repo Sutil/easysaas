@@ -40,6 +40,16 @@
               {
                 "input": "src/theme-light.scss",
                 "bundleName": "light",
+                "inject": true
+              },
+              {
+                "input": "src/theme-gym.scss",
+                "bundleName": "gym",
+                "inject": false
+              },
+              {
+                "input": "src/theme-clinic.scss",
+                "bundleName": "clinic",
                 "inject": false
               }
             ],
