@@ -1,8 +1,8 @@
 {
   "name": "easysaas",
   "short_name": "easysaas",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
