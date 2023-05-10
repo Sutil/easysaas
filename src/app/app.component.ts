@@ -1,6 +1,6 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { LocalStorageService } from './services/local-storage/local-storage.service';
+import { Component } from '@angular/core';
 import { LocalStorageKey } from './services/local-storage/local-storage-key.enum';
+import { LocalStorageService } from './services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -51,6 +51,8 @@ export class AppComponent {
     const color = getComputedStyle(document.body)
       .backgroundColor
 
-    this.metaThemeColor.content = color
+    setTimeout(() => {
+      this.metaThemeColor.content = color
+    }, 100)
   }
 }
