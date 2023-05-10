@@ -47,12 +47,12 @@ export class AppComponent {
 
   loadTheme(theme: string) {
     this.style.href = `${theme}.css`
-
-    const color = getComputedStyle(document.body)
-      .backgroundColor
-
-    setTimeout(() => {
-      this.metaThemeColor.content = color
-    }, 100)
+    setTimeout(
+      () => {
+        const color = getComputedStyle(document.body)
+          .backgroundColor
+        this.metaThemeColor.content = color
+      },
+      100)
   }
 }
