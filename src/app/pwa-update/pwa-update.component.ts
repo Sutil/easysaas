@@ -24,6 +24,10 @@ export class PwaUpdateComponent implements OnInit{
     this.modalRef?.hide()
   }
 
+  installNewVersion() {
+    this.swUpdate.activateUpdate().then(() => document.location.reload());
+  }
+
   private checkInstallation() {
 
     this.swUpdate.versionUpdates.subscribe(e => {
