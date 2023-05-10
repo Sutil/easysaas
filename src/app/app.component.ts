@@ -12,11 +12,15 @@ export class AppComponent {
   public static default = 'light';
   private theme: string = 'light';
   private readonly style: HTMLLinkElement;
+  private readonly metaThemeColor: HTMLMetaElement;
 
   constructor(private localStorageService: LocalStorageService) {
     this.style = document.createElement('link');
     this.style.rel = 'stylesheet';
     document.head.appendChild(this.style);
+
+    this.metaThemeColor = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
+
     this.initialTheme()
   }
 
@@ -43,5 +47,10 @@ export class AppComponent {
 
   loadTheme(theme: string) {
     this.style.href = `${theme}.css`
+
+    const color = getComputedStyle(document.body)
+      .backgroundColor
+
+    this.metaThemeColor.content = color
   }
 }
