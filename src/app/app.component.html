@@ -1,27 +1,2 @@
-<div>
-  <div class="container">
-    <h1>Projeto EasySaaS</h1>
-    <p>Exemplo de parágrafo</p>
-  
-    <div class="row">
-      <div class="col-6 col-md-3">
-        <button type="button" class="btn btn-primary w-100" (click)="toggleTheme('light')"
-          tooltip="Tooltip example">
-          Primário
-        </button>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <button type="button" class="btn btn-secondary w-100" (click)="toggleTheme('dark')"
-          tooltip="Tooltip example">
-          Secundário
-        </button>
-      </div>
-
-      <app-pwa-update></app-pwa-update>
-    </div>
-  
-  </div>
-
-  <router-outlet></router-outlet>
-</div>
+<app-pwa-update></app-pwa-update>  
+<router-outlet></router-outlet>

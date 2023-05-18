@@ -1,0 +1,28 @@
+
+.authentication {
+  background-image: linear-gradient(75deg, var(--bs-primary) -100%, var(--bs-body-bg) 50%, var(--bs-secondary) 200%);
+  box-shadow: inset 0 0 20px var(--bs-gray-900);
+
+  header {
+    position: fixed;
+    top: 0;
+  }
+
+  .logo {
+    width: 5rem;
+  }
+
+  .form-content {
+    width: 90%;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+
+    .content {
+      max-width: 30rem;
+      min-width: 10rem;
+    }
+  }
+}
