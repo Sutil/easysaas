@@ -1,0 +1,30 @@
+<div class="authentication h-100 bg-gradient-primary d-flex align-items-center">
+  <header class="w-100 d-flex justify-content-end gap-3">
+    <button type="button" class="btn" (click)="setTheme('light')" title="Tema claro" >
+      <i class="bi bi-brightness-high-fill"></i>
+    </button>
+    <button type="button" class="btn" (click)="setTheme('dark')" title="Tema escuro" >
+      <i class="bi bi-moon-fill"></i>
+    </button>
+  </header>
+  <div class="container d-flex flex-column align-items-center">
+    <div class="w-100 d-flex justify-content-center">
+      <div class="logo">
+        <es-logo></es-logo>
+      </div>
+    </div>
+    <div class="form-content">
+      <p class="text-center">
+        Os formulários aparecerão aqui.
+      </p>
+      <p class="text-center" >
+        Criação de conta, login ou recuperação de senha
+      </p>
+  </div>
+  <footer class="p-2 w-100 d-flex justify-content-center">
+    <div class="w-100 content d-flex justify-content-around">
+      <a href="#">Termos de uso</a>
+      <a href="#">Política de privacidade</a>
+    </div>
+  </footer>
+</div>

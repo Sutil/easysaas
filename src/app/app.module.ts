@@ -1,16 +1,16 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { PwaUpdateComponent } from './pwa-update/pwa-update.component';
-import { BsModalService } from 'ngx-bootstrap/modal';
 @NgModule({
   declarations: [
     AppComponent,
-    PwaUpdateComponent
+    PwaUpdateComponent,
   ],
   imports: [
     BrowserModule,
