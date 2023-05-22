@@ -19,6 +19,7 @@
     }
   ],
   "hosting": {
+    "site": "easy-saas-platform",
     "public": "dist/easysaas",
     "ignore": [
       "firebase.json",

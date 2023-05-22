@@ -1,35 +1,39 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { PwaUpdateComponent } from './pwa-update/pwa-update.component';
+import { SwUpdate } from '@angular/service-worker';
+import { RouterModule } from '@angular/router';
+import { BsModalService } from 'ngx-bootstrap/modal';
+
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+  let app: AppComponent;
+  const swUpdateMock = {}
+  const bsModalServiceMock = {}
+  beforeAll(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        PwaUpdateComponent,
       ],
-    }).compileComponents();
+      providers: [
+        {
+          provide: SwUpdate,
+          useValue: swUpdateMock
+        },
+        {
+          provide: BsModalService,
+          useValue: bsModalServiceMock
+        }
+      ]
+    });
+    const fixture = TestBed.createComponent(AppComponent);
+    app = fixture.componentInstance;
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'easysaas'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('easysaas');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('easysaas app is running!');
-  });
 });

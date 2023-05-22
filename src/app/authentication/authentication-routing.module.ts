@@ -4,7 +4,17 @@ import { AuthenticationComponent } from './authentication.component';
 
 const routes: Routes = [{
   path: '',
-  component: AuthenticationComponent
+  component: AuthenticationComponent,
+  children: [
+    {
+      path: 'create-account',
+      loadChildren: () => import('./create-account/create-account.module').then(m => m.CreateAccountModule)
+    },
+    {
+      path: '**', 
+      redirectTo: 'create-account'
+    }
+  ]
 }];
 
 @NgModule({
