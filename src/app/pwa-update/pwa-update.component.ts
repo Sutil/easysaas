@@ -25,6 +25,7 @@ export class PwaUpdateComponent implements OnInit{
   }
 
   installNewVersion() {
+    console.log('>>>>> vai reload')
     this.swUpdate.activateUpdate().then(() => document.location.reload());
   }
 
