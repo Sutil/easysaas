@@ -1,5 +1,16 @@
 {
   "projects": {
     "default": "easy-saas-platform"
-  }
+  },
+  "targets": {
+    "easy-saas-platform": {
+      "hosting": {
+        "easy-saas-platform": [
+          "easy-saas-platform",
+          "easysaas-storybook"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
