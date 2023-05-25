@@ -4,7 +4,12 @@ Angular 16
 Firebase
 Bootstrap
 
-## Ferramentas necessários
+##### Sumário
+
+[Ferramentas necessários](#ferramentas-necessárias)
+[Configure o Firebase](#configure-o-firebase)
+
+## Ferramentas necessárias
 - [Node](https://nodejs.org/en)
 - [Angular CLI](https://angular.io/cli)
 - Firebase Tools - `npm install -g firebase-tools`
@@ -36,7 +41,7 @@ Siga os passos do CLI.
 Altere os arquivos `src/theme-dark.scss` e `src/theme-light.scss` com as variáveis que deseja.
 Veja [Bootstrap Theming](https://getbootstrap.com/docs/4.0/getting-started/theming/) para mais informações.
 
-## Development server
+## Servidor de desenvolvimento
 
 Execute `ng serve` para servidor de desenvolvimento. Navegue para `http://localhost:4200/`. A aplicação irá atualizar automaricamente a cada vez que salvar o código.
 
@@ -46,6 +51,9 @@ Execute `ng serve` para servidor de desenvolvimento. Navegue para `http://localh
 `ng build -c production` para build de produção.
 Os artefatos serão armazenados em `/dist`
 
-## Running unit tests
+## Executar testes unitários
 
 `ng test` para executar testes unitários via [Karma](https://karma-runner.github.io).
+
+## Storybook
+Execute `npm run sb`.

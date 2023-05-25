@@ -1,0 +1,15 @@
+<div class="mb-3">
+  <label [for]="formControlName" class="form-label">
+    <ng-content></ng-content>
+  </label>
+  <input type="text" class="form-control" 
+    [id]="formControlName" 
+    [name]="formControlName" 
+    [placeholder]="placeholderText"
+    [attr.disabled]="isDisabled || null"
+    [ngModel]="value"
+    (ngModelChange)="_onChange($event)"
+    (blur)="_onTouch()"
+    >
+    <small *ngIf="control && control.touched && control.errors" class="text-danger" >error</small>
+</div>
