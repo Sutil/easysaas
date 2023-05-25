@@ -8,7 +8,7 @@ import { TextInputModule } from 'src/app/components/text-input/text-input.module
   template: `<form [formGroup]="formGroup" (submit)="submit()">
       <es-text-input
         formControlName="myInput"
-        placeholderText="My Placeholder"
+        placeholderText="My Placeholder 2"
         >My Label</es-text-input>
         <button class="btn btn-primary" >Submit</button>
     </form>`,

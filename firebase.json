@@ -18,15 +18,26 @@
       ]
     }
   ],
-  "hosting": {
-    "site": "easy-saas-platform",
-    "public": "dist/easysaas",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  },
+  "hosting": [
+    {
+      "site": "easy-saas-platform",
+      "public": "dist/easysaas",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "site": "easysaas-storybook",
+      "public": "dist/sb",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ],
   "emulators": {
     "auth": {
       "port": 9099

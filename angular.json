@@ -151,7 +151,7 @@
             "configDir": ".storybook",
             "browserTarget": "easysaas:build",
             "compodoc": false,
-            "outputDir": "storybook-static"
+            "outputDir": "dist/sb"
           }
         }
       }
