@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges, SimpleChanges, forwardRef } from '@angular/core';
-import { AbstractControl, ControlContainer, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { AfterContentInit, Component, INJECTOR, Inject, Injector, Input, forwardRef } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'es-text-input',
@@ -13,9 +13,9 @@ import { AbstractControl, ControlContainer, ControlValueAccessor, NG_VALUE_ACCES
     }
   ]
 })
-export class TextInputComponent implements ControlValueAccessor, OnChanges {
+export class TextInputComponent implements ControlValueAccessor, AfterContentInit {
 
-  @Input({required: true})
+  @Input()
   formControlName = 'input'
 
   @Input()
@@ -28,13 +28,15 @@ export class TextInputComponent implements ControlValueAccessor, OnChanges {
   _onChange = (val: string | number) => {}
   _onTouch = () => {}
 
-  constructor(private controlContainer: ControlContainer) {}
+  constructor(@Inject(INJECTOR) private injector: Injector) {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if(changes['formControlName'] && changes['formControlName'].currentValue) {
-      this.control = this.controlContainer.control?.get(this.formControlName) as AbstractControl
+  ngAfterContentInit(): void {
+    const ngControl = this.injector.get(NgControl)
+    if(ngControl && ngControl.control) {
+      this.control = ngControl.control
     }
   }
+
 
   writeValue(value: string | number): void {
       this.value = value

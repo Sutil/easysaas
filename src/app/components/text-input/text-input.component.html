@@ -11,5 +11,5 @@
     (ngModelChange)="_onChange($event)"
     (blur)="_onTouch()"
     >
-    <small *ngIf="control && control.touched && control.errors" class="text-danger" >error</small>
+    <es-form-control-error [control]="control" ></es-form-control-error>
 </div>
