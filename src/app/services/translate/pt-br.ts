@@ -1,3 +1,4 @@
 export default {
-  required: 'Obrigatório'
+  required: 'Obrigatório',
+  minlength: 'Deve ter ao menos {{requiredLength}} caracteres'
 }

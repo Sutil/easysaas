@@ -27,6 +27,7 @@ export class FormControlErrorComponent {
       const errorObj = this.control.errors
       Object.keys(errorObj).forEach(key => {
         const params = this.getParams(errorObj[key])
+        console.log('>>>', params)
         if(Object.keys(params).length > 0) {
           errorMessages.push(`${this.translateService.instant(key, params)}`);
         } else {

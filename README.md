@@ -1,13 +1,16 @@
 # Easysaas
 
-Angular 16
-Firebase
-Bootstrap
+- Angular 16
+- Firebase
+- Bootstrap
+- Translations
+- Storybook documentation
 
 ##### Sumário
 
 [Ferramentas necessários](#ferramentas-necessárias)
 [Configure o Firebase](#configure-o-firebase)
+[Estilos - altere seu tema se desejar](#estilos---altere-seu-tema-se-desejar)
 
 ## Ferramentas necessárias
 - [Node](https://nodejs.org/en)
