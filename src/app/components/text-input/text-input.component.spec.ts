@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControlErrorModule } from '../form-control-error/form-control-error.module';
 import { TextInputComponent } from './text-input.component';
 
 describe('TextInputComponent', () => {
@@ -8,7 +10,9 @@ describe('TextInputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TextInputComponent]
+      imports: [FormControlErrorModule, ReactiveFormsModule, FormsModule],
+      declarations: [TextInputComponent],
+      providers: [NgControl]
     });
     fixture = TestBed.createComponent(TextInputComponent);
     component = fixture.componentInstance;
