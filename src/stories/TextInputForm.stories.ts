@@ -1,46 +1,52 @@
-import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import type { Meta, StoryObj } from '@storybook/angular';
-import { TextInputModule } from 'src/app/components/text-input/text-input.module';
+import { CommonModule } from '@angular/common';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Meta, StoryObj, componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
+import { FormControlErrorModule } from 'src/app/components/form-control-error/form-control-error.module';
+import { TextInputComponent } from 'src/app/components/text-input/text-input.component';
 
-
-@Component({
-  template: `<form [formGroup]="formGroup" (submit)="submit()">
-      <es-text-input
-        formControlName="myInput"
-        placeholderText="My Placeholder 2"
-        >My Label</es-text-input>
-        <button class="btn btn-primary" >Submit</button>
-    </form>`,
-})
-class WrapStoryComponent {
-
-  formGroup = this.fb.group({
-    myInput: ['', Validators.required]
-  })
-
-  constructor(private fb: FormBuilder) {}
-
-  submit() {
-    alert(JSON.stringify(this.formGroup.value))
-  }
-}
-
-const meta: Meta<WrapStoryComponent> = {
-  title: 'Forms/TextInput/FormControl',
-  component: WrapStoryComponent,
-  render: () => ({
-    moduleMetadata: {
-      imports: [ReactiveFormsModule, TextInputModule]
-    }
-  }),
+const meta: Meta<TextInputComponent> = {
+  title: 'Forms/TextInput',
+  tags: ['autodocs'],
+  component: TextInputComponent,
+  decorators: [
+    moduleMetadata({
+      imports: [CommonModule, ReactiveFormsModule, FormsModule, FormControlErrorModule],
+    }),
+    componentWrapperDecorator((story) => `<form [formGroup]="formGroup" (submit)="submitFunction()" >
+      ${story}</form>`)
+  ],
 };
 
 export default meta;
-type Story = StoryObj<WrapStoryComponent>;
+type Story = StoryObj<TextInputComponent>;
 
-export const TextInputForm: Story = {
+const Default: Story = {
   args: {
+    placeholderText: 'My placeholder',
+    formControlName: 'name'
   },
+  render: (args: TextInputComponent) => {
+
+    const formGroup = new FormGroup({})
+    const control = new FormControl()
+    formGroup.addControl(args.formControlName, control)
+    control.setValidators(Validators.required)
+
+    const submitFunction = () => alert(JSON.stringify(formGroup.value))
+
+    return {
+      template: `<es-text-input placeholderText="${args.placeholderText}" formControlName="${args.formControlName}" >Rótulo</es-text-input>`,
+      props: {
+        formGroup: formGroup,
+        submitFunction,
+        ...args
+      },
+    }
+  }
+}
+
+
+export {
+  Default
 };
 
