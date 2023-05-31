@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Meta, StoryObj, componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 import { FormControlErrorModule } from 'src/app/components/form-control-error/form-control-error.module';
 import { TextInputComponent } from 'src/app/components/text-input/text-input.component';
+import { CustomValidators } from 'src/app/utils/forms/custom-validators';
 
 const meta: Meta<TextInputComponent> = {
   title: 'Forms/TextInput',
@@ -45,8 +46,34 @@ const Default: Story = {
   }
 }
 
+const Email: Story = {
+  args: {
+    placeholderText: 'Your best e-mail',
+    formControlName: 'email'
+  },
+  render: (args: TextInputComponent) => {
+
+    const formGroup = new FormGroup({})
+    const control = new FormControl()
+    formGroup.addControl(args.formControlName, control)
+    control.setValidators([Validators.required, CustomValidators.emailValidator()])
+
+    const submitFunction = () => alert(JSON.stringify(formGroup.value))
+
+    return {
+      template: `<es-text-input placeholderText="${args.placeholderText}" formControlName="${args.formControlName}" >E-mail</es-text-input>`,
+      props: {
+        formGroup: formGroup,
+        submitFunction,
+        ...args
+      },
+    }
+  }
+}
+
 
 export {
-  Default
+  Default,
+  Email
 };
 
